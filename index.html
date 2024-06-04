@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Square root finder</title>
+<style>
+		* { font-size: 50px;font-family: 'Times New Roman', Times, serif;}
+		body {background-color:papayawhip; }
+</style>
+</head>
+<body>
+    <center>
+        <h1> Addition App</h1>
+        <form onsubmit="add()">
+            <input type="number", step="any", placeholder="1st Num", id="num1"/>
+            <br/><br/>
+            <input type="number", step="any", placeholder="2nd Num", id="num2"/>
+            <br><br>
+            <input type="submit" value="ADD">
+        </form>
+        <h2 id="msg" />
+        <script>
+            function add()
+            {
+            event.preventDefault();
+            let num1 = document.getElementById("num1");
+            let num2 = document.getElementById("num2");
+            let msg = document.getElementById("msg");
+
+            if (num1.value == "")
+            {
+                alert("you didnot enter first num");
+                msg.innerHTML = "";
+                num1.focus();
+                return;
+            }
+
+            if (num1.value == "")
+            {
+                alert("you didnot enter 2nd num");
+                msg.innerHTML = "";
+                num2.focus();
+                return;
+            
+            }
+            let n1 = parseFloat(num1.value);
+            let n2 = parseFloat(num2.value);
+            let res = n1 + n2;
+            let ans = "addition = " + res.toFixed(3);
+            msg.innerHTML = ans;
+            }
+        </script>            
+    </center>
+    </body>
+    </html>
